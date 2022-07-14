@@ -1,0 +1,60 @@
+Operating System is a software that helps in user interacting with hardware. 
+It contains the code for memory and resource management.
+
+Memory management means that it will provide ways to allocate portions of memory to programs at their request.
+Resource management means that it provides ways for memory management , security , handling i/o , scheduling etc. 
+
+If there is no OS , then :
+-> Apps will be bulky as all the apps will be required to have their own program for resource management.
+-> Resource exploition , one app can occupy all the resources like memory or CPU.
+-> No memory protection , one app can corrupt(change values) the memory of other app.
+
+Benefits of OS:
+-> Provides protection and isolation: Memory of one app will always be separate from the memory of the other app thus providing protection.
+-> Now , separate apps don't need to handle resource management which makes apps lighter.
+-> It acts as interface between user and the hardware.
+
+Goals of OS:
+-> Maximum CPU utilization : If a process is performing an i/o operation , then cpu can execute some other process . (We don't want CPU to be idle)
+-> Process Starvation : We don't want a CPU to complete processes in a sequential way because if one of the process is too heavy , 
+   then other process won't get a chance to get executed . So , a CPU runs multiple process together .
+-> Support execution of high priority task .
+
+Types Of OS :
+
+-> Single Process OS : All the processes are executed sequentially one after another. Eg: MS DOS.
+
+-> Batch Processing OS : To perform a process , people had to use punchcards (piece of paper with holes that represent digital data) and 
+   then they had to give it to the operator. Then operator will group the processes into batches based on how similar the process were . 
+   They these batches are executed sequentially by the OS . For each batch , the resources are allocated and deallocated again and again but for the 
+   processes belonging to same batch , resources are allocated and deallocated only once because similar processes will have similar requirements.
+   Eg : ATLAS OS.
+
+-> Multi-programing OS : All processes are executed sequentially . But if a process has to perform an i/o operation , then the cpu executes the next process . 
+   Eg: THE OS.
+
+-> Multitasking OS : It is quite similar to multi-programing OS , only difference is that here , we have time sharing ie ... after some time , 
+   next process is executed irrespective of whether there is an i/o operation to be performed or not . This is better than previous method 
+   because it reduces the chance of process starvation. Eg : CTSS OS.
+
+-> Multiprocessing OS: Similar to multitasking OS but the difference is that here , we have more than 1 CPU . Here , we don't have single point of failure  
+   ie... if one cpu doesn't work , still our processes will get executed unlike in previous case. Eg: Windows
+
+-> Distributed OS : OS where it has access to resources from multiple systems . Eg: AIX OS.
+
+-> Real Time OS: OS where chance of error is as minimal as possible and the CPU should execute the process really fast . For eg: Air traffic controller.
+
+Process in a program that is under execution . It is a program that has been assigned memory in RAM. Programs are stored in disk.
+
+A thread is a light weight process. A thread is used to execute a sub task inside a process that is completely independent of other task . 
+Using threads , we break a process into smaller sub processes which are independent of each other.
+It helps us achieve parellelism.
+
+Note: There won't be isolation between threads of same process.
+
+Multitasking Vs Multi-threading:
+
+-> Multitasking involves more than 1 process whereas multi-threading involves more than one thread.
+-> Concept of isolation and memory protection is applicable whereas in case of multi-threading , this concept is not applicable.
+-> Here, process are scheduled whereas in other case , threads are scheduled , ie... CPU will be told that which process or thread to execute and when. 
+
