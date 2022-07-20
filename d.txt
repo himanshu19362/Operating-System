@@ -1,0 +1,70 @@
+Process : Program under execution.
+
+Why we need process : To let the user perform a task in computer.
+
+How OS creates a process:
+
+-> Loads the program and static data into the RAM.
+
+-> Allocate Runtime Stack : Stack is a part of memory which stores local variables , function arguments and return values.
+
+-> Allocate Heap : Heap is a part of memory for dynamic allocation of memory.
+
+-> Performs I/O tasks : Sets up where and how input , output , error handling will be done.  
+
+-> Now main() will be executed by the CPU.
+
+Process Architecture: It consists of several things which are : 
+
+-> Text : Compiled code is stored here .
+
+-> Data : Global Variables are stored here . 
+
+-> Heap : All the dynamically data is allocated memory here . 
+
+-> Stack : Here , all the local variables , return values etc are stored and recursion is possible because of this.
+
+Attributes of Process : Used to differentiate between different processes.
+
+Process Table : 
+-> It is a table created by the OS which contains information about all the processes that are running in the system. 
+
+-> It is an array of Process Control Block.
+
+-> Process Table is stored in RAM .
+
+Process Control Block : It is a data structure that stores all the information about a process . It stores the following information 
+
+-> Process Id : Unique Id given to every process
+
+-> Program Counter : Address of instruction that has to be executed. It goes to the address , fetches the instruction , increments 
+   the counter and executes the fetched instruction.
+
+-> Process State : It stores whether the current process is in new state , wait state , run state etc.
+
+-> Priority : It defines the priority of the current process .
+
+-> Registers : Stores the values of process specific registers.
+
+-> Open File List : Stores information about the files that the current process has opened. 
+
+Process State : Different Stages of a process .
+
+-> NEW : When program is being converted into a process . 
+
+-> READY : Process is occupied memory in RAM and is present in Ready Queue.
+
+-> RUNNING : When CPU is allocated to the process .
+
+-> WAITING : When we wait for an I/O operation to get completed.
+
+-> TERMINATE : When process is finished .
+
+Job Queue : It contains all the processes that are in New state . 
+
+Job Scheduler : It is a module which schedules process in Job Queue into Ready State. (Long Term Scheduler)
+
+CPU Scheduler : It is a module which schedules process in Ready Queue to Running State. (Short Term Scheduler)
+
+Waiting Queue : It stores all the process in Waiting state.
+
