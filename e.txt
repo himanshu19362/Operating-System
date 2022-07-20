@@ -1,0 +1,61 @@
+Degree of Multiprogramming : No of process that can be present in Ready Queue and it is managed by Job Scheduler.
+
+How Job Scheduler(Long Term Scheduler) chooses process from Job Queue : 
+
+-> It picks those processes that have different requirements ie... it makes sure that it doesn't end up picking only those processes 
+   that require a lot of hardware and so on.
+
+Medium Term Scheduler :
+
+-> Medium Term Scheduler is a module used to reduce degree of multiprogramming . The tasks that are less relevant and require a lot of time
+   and are present in Ready Queue are stored in disc and when we need that process , we swap it in the Ready queue again.
+
+-> Swap_Out : Storing the process present in Ready Queue inside the disc.
+
+-> Swap_In: Pushing the process saved in disc back to Ready Queue .
+
+Context Switching : 
+
+-> Context Switching is the process in which processor switches from executing one process to another making sure that we save the state 
+   of previous process and load the state of new process it will be handling . 
+
+-> Context Switching is pure overhead because time gets wasted when process switches from one processor to another .
+
+Orphan Process : 
+
+-> Every process is a child of another process and the root process is the 'init' process .
+
+-> If we create a new process using fork , then the new process is the child process of the current process . But lets say that there is 
+   an exception that occurs in the parent process because of which it terminates , then the child process now doesn't have a parent process.
+   This child process is also called as orphan process . To handle this , OS internally assigned parent of the orphan process as the 
+   'init' process.
+
+-> Always make sure that parent process waits for child process to get completed.
+
+Zombie Process : 
+
+-> Lets say that a process is completed and it returns the exit code but it isn't getting exited because the parent 
+   process is busy (for eg . sleeping) , then the process waiting to be exited is called a zombie process . This is a problem because
+   although the process is executed , but since it hasn't exited , it is still occupying memory in the process table . 
+
+-> To avoid this , we usually wait for the child process to be executed .
+
+When we talk of scheduling algorithms , we talk about CPU Scheduling Algorithms.
+
+Types of Scheduling Algorithm : 
+
+-> Non preamtive : When a process gets a CPU , it will either terminate or it will stop executing only if it goes in WAITING State.
+
+-> Premptive : Here , process can also switch if time quantum is over .
+
+CPU Scheduler Goals:
+
+-> Maximum CPU Utilization
+
+-> Minimum Turn Around Time ie... time taken to complete the process should be minimum.
+
+-> Minimum wait time ie ... a process should wait for CPU as less as possible .
+
+-> Minimum Response Time ie.. time between a process coming in Ready Queue for first time and it getting CPU should be minimum.
+
+-> Maximum throughput(no of processes completed per unit time)
