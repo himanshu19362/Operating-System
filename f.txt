@@ -1,0 +1,78 @@
+Arrival Time(AT) : Time when process arrived in ready queue.
+Burst Time(BT) : Time taken by a process to get completed.
+Turn Around Time(TRT) : Time from arriving first in ready state to time of termination.(CT-AT)
+Wait Time(WT) : Time process spends waiting .(TRT-BT)
+Response Time : Time between process getting into ready queue and getting executed first time.
+Completion Time(CT) : Time when process is completed.
+
+FCFS Scheduling Algorithm :
+
+-> The process that comes first in Ready Queue will be scheduled first .
+
+-> But this has a problem called Convoy Effect . If we schedule a heavy process first , then average wait time comes out 
+   to be higher if we use FCFS Algorithm because the later process will have to wait for longer so that the first process gets 
+   completed .
+
+-> It is a non-premptive Scheduling Algorithm.
+
+Shortest Job First Algorithm (SJF) :
+
+-> Non Preemptive : Job with shortest burst time will be executed first . Convoy Effect is possible if first process has a high burst time .  
+
+-> Preemptive : Here , the scheduler regularly checks the Ready Queue which processes are available and on the basis of pending time left 
+   to execute , it will choose the process with least pending burst time . Due to this , Convey Effect is not possible .
+
+-> But SJF algorithm is really difficult to implement because predicting process burst time beforehand is very difficult to do .
+
+Priority Scheduling : 
+
+-> Non Preemptive : Job with highest priority will be executed first . Convoy Effect is possible.
+
+-> Preemptive : Scheduler keeps checking if there is a process with higher priority regularly . If found , then the new context is switched.
+   The problem here is there will be overhead because of context switching again and again . Also , processes with low burst time and low 
+   priority will take a long time to get CPU . Here , convoy effect is possible if first process has high priority that takes a lot of time .
+
+-> Indefinite Waiting : Lets say that process with high priority keeps coming , then process with low priority will never get CPU .
+   To fix this , concept of ageing was introduced . So , priority of a process increases with time .
+
+Round Robin Scheduling : 
+
+-> Similar to FCFS Scheduling , only difference is that after every time quantum , process keeps changing .  
+
+
+Types of Processes:
+
+-> System Processes : Process created by OS . For eg : init process .
+
+-> Interactive Process : Process that need user input . For eg : MS Word.
+
+-> Batch Process : Process that runs in background and it doesn't need user input .
+
+Multilevel Queue Scheduling :
+
+-> Here , Ready Queue is logically partitioned into 3 parts based on the type of process . System Process Queue will have the highest 
+   priority followed by Interactive Process Queue and Batch Process Queue . Also , all these three scheduling algorithms will have 
+   their separate scheduling algorithms . 
+
+-> Here also , starvation is possible .
+
+Multilevel Feedback Queue Scheduling :
+
+-> It also has multiple queues but here movement between the queues is possible here . 
+
+-> Process with high burst time is at lower queue whereas process which are I/O bound or interactive processes have higher priority . 
+
+-> Also , Ageing is used here as well ie ... with time , priority of process increases due to which it can go up in the hierarchy of queues .
+
+Design of MLFQ:
+
+-> No of Queues .
+
+-> Algorithm implemented in each individual queue . 
+
+-> Method to upgrade to a higher queue .
+
+-> Method to demote a process to lower queue . 
+
+-> If a process comes first time , then in which queue will it go . 
+
