@@ -1,0 +1,44 @@
+How OS boots up: 
+-> Power On: Electricity goes to power supply which supplies electricity to hardware.
+
+-> CPU gets initialize and starts executing BIOS . 
+
+-> BIOS is a set of instructions which is stored in BIOS chip connected to processor. It does the following:
+   1) It will Power on Self Test ie... it makes sure that all hardware divices are working well.
+   2) Initializes video card and other devices .
+   3) May display BIOS on screen.
+   4) Identify the boot device(hardware where bootloader is present) and loads the bootloader in RAM.
+      Bootloader can be present in MBR(Master Boot Record) which is the 0th index of disc or EFI which is a partition in disc.
+
+-> Bootloader is a program that loads the OS in the memory . It also switches system from real mode to protected mode . 
+
+Registers : Memory storage in CPU . 
+
+Difference between 32 bit and 64 bit OS:
+-> 32 bit OS means that the registers in processor will be of 32 bits and in 64 bit OS , the processors will have 64 bit registers.
+
+Advantages of 64 bit OS:
+
+-> Addressable Memory : 32 bit OS can store 2^32 different unique addresses which is 4GB . So , if RAM is greater than 4GB , no significant performance improvement . But 
+   64 bit OS can support RAM with greater memory and it will give better performance . 
+
+-> Compatibility : 64 bit CPU can run in both 32 bit as well as 64 bit OS but 32 bit CPU can only run in 32 bit OS.
+
+-> Performance : 64 bit processors are fast because 8 bytes of data can be executed in 1 instruction cycle whereas only 4 bytes of data 
+   can executed in one instruction cycle .
+
+-> Better graphics : 8 byte graphic calculations make graphic extensive apps run faster.
+
+Storage:
+-> Primary Memory: Registers, Cache , Main Memory/RAM
+-> Secondary Memory : Electronic , Magnetic , Optical Disk , magnetic tapes.
+
+Comparison between Storage:
+
+-> Cost: Registers > Cache > RAM > Disk . This is because Registers provide fast access to data .
+
+-> Speed : Registers > Cache > RAM > Disk  
+
+-> Storage Size : Registers < Cache < RAM < Disk 
+
+-> Primary memory is volatile (it is empty when computer is shut down) whereas secondary memory is non-volatile.
