@@ -1,0 +1,61 @@
+Concurrency : It is the ability of executing multiple instructions at the same time .
+
+Multithreading:
+
+-> To achieve concurrency , we can create multiple threads . 
+
+-> When we create multiple threads , we have thread scheduling algorithms that schedule threads . 
+
+-> Thread scheduling is fast because the memory shared by threads is same and are lightweight. 
+
+-> In multithreading , the parent process will contain multiple stacks instead of 1 stack based on no of child threads .
+
+-> Each thread has its own program counter using which it fetches the instruction . Also , address space is not switched 
+   because it is same for all threads but program counter , stack space , registers are switched .
+
+Benefits of Multithreading : 
+
+-> Makes apps responsive/interactive . 
+
+-> Resource Sharing .
+
+-> Context switching between threads is economical because all the threads will share a common address space.
+
+Critical Section Problem :
+
+-> Critical Section : It is a segment of code where processes/threads access shared resources like variables , files and perform 
+   write operation on them . Since these processes are executed concurrently , any process can be interrupted by another process
+   mid execution .
+
+-> This critical section leads to Race Condition . Race condition occurs when two threads access same data at same time . 
+   Since in thread scheduling , threads can be swapped with each other , they might not let one thread complete its task and will 
+   start executing the other process , this will lead to unexpected outputs . The output here will be dependent on thread 
+   scheduling Algorithm .
+
+Solution of critical section should have :
+-> Mutual Exclusion ie... Only one thread can be executed at a time .
+-> Progress : If critical section is free , then any thread can execute it. There shouldn't be a fixed order.
+-> Bounded Wait : There should be a maximum time after which a thread should definitely be executed.
+
+How to Overcome Race Condition:
+
+-> By making atomic variables . Atomic variables are variables that are executed in one CPU cycle .
+
+-> Using mutual exclusion . Mutex or lock is a object that makes sure that two threads that are access a common resource , they 
+   access it turnwise . Here , mutual exclusion and progress is satisfied but not bounded wait.
+
+-> It can also be solved using flags . But it violates the condition of progress as the threads will 
+   be executed in a particular order . Progress is violated .
+
+-> Petersons Solution : It is slight improvement of flag solution . In flag solution , the first thread to be executed depended on 
+   the value of turn . But Peterson's solution doesn't depend on initial value of turn . So , it solves the problem of progress .
+   But doesn't work for more than 2 threads .
+
+Disadvantage of Locks : 
+
+-> Contention : It is situation where a thread ends up waiting infinitely . For eg : if thread 1 is getting executed and other threads are waiting ,
+   then lets say that there is exception in thread 1 , then the rest of waiting threads will keep waiting infinitely. 
+
+-> Debugging multithreaded code is difficult .
+
+-> Starvation of high priority jobs if a low priority job has already locked it .
